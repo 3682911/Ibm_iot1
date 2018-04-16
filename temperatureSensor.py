@@ -20,7 +20,7 @@ while True:
 		client.publish(topic, json.dumps({'t':t}))
 		print(str(t));
 		t=(t+1)%20
-		time.sleep(1)
+		time.sleep(2)
 	except IOError:
 		print("Error")
 
