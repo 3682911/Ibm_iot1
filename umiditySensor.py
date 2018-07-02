@@ -2,6 +2,7 @@ import sys
 import time
 import json
 import paho.mqtt.client as mqtt
+from random import randint
 
 #MQTT paramenters
 host='5t346b.messaging.internetofthings.ibmcloud.com'
@@ -19,7 +20,7 @@ while True:
 	try:
 		client.publish(topic, json.dumps({'u':u}))
 		print(str(u));
-		u=(u+8)%90
+		u=(u-4+randint(0,15))%90
 		time.sleep(5)
 	except IOError:
 		print("Error")
